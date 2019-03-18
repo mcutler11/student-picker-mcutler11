@@ -5,3 +5,12 @@
  * 4. Push the new object onto an Array
  * 5. Randomly select a 'student Object' from the Array and console.log().
  */
+
+function SubmitHandler(event) {
+  event.preventDefault();
+
+  const fname = document.querySelector('#fname').value;
+  const lname = document.querySelector('#lname').value;
+}
+
+document.querySelector('form').addEventListener("submit", submitHandler);
