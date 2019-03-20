@@ -8,10 +8,7 @@
 
 const students = [];
 
-function studentCreator() {
-
-  const fname = document.querySelector('#fname').value;
-  const lname = document.querySelector('#lname').value;
+function studentCreator(fname, lname) {
 
   const student = {
     fname,
@@ -22,7 +19,9 @@ function studentCreator() {
 }
 
 document.querySelector("form").addEventListener("submit", (e) => {
+  const fname = document.querySelector('#fname').value;
+  const lname = document.querySelector('#lname').value;
   e.preventDefault();
-  students.push(studentCreator());
+  students.push(studentCreator(fname, lname));
   console.log(students);
 });
