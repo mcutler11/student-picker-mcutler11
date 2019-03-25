@@ -6,14 +6,14 @@ const students = [
   { fname: "Camille", lname: "Schneider" }
 ];
 
-function studentCreator(fname, lname) {
+const studentCreator = (fname, lname) => {
   const student = {
     fname,
     lname
   };
 
   return student;
-}
+};
 
 const getRandomIntInclusive = (min, max) =>
   Math.floor(Math.random() * (max - min + 1)) + min;
