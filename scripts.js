@@ -28,5 +28,7 @@ document.querySelector("form").addEventListener("submit", e => {
 });
 
 document.querySelector("button").addEventListener("click", () => {
-  console.log(getRandomIntInclusive(1, 10));
+  // const randomIndex = getRandomIntInclusive(0, students.length - 1);
+  // const chosen = students[randomIndex];
+  console.log(students[getRandomIntInclusive(0, students.length - 1)]);
 });
