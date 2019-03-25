@@ -30,5 +30,13 @@ document.querySelector("form").addEventListener("submit", e => {
 document.querySelector("button").addEventListener("click", () => {
   // const randomIndex = getRandomIntInclusive(0, students.length - 1);
   // const chosen = students[randomIndex];
-  console.log(students[getRandomIntInclusive(0, students.length - 1)]);
+  const chosen = students[getRandomIntInclusive(0, students.length - 1)];
+  const ptc = document.querySelector("p").textContent;
+  console.info(`${ptc} ${chosen.fname} + ${chosen.lname}`);
+
+  /**
+   * 1. Grab the textContent property from <p>.
+   * 2. Append to that textContent the first and last name from our chosen student.
+   * 3. Put that back into the DOM.
+   */
 });
