@@ -33,6 +33,6 @@ document.querySelector("button").addEventListener("click", () => {
   // const ptc = p.textContent;
 
   // Here, it has to be used as a SETTER
-  document.querySelector("p").textContent = `And the lucky student is:
+  document.querySelector("p").textContent = `Our lucky student is:
   ${chosen.fname} + ${chosen.lname}`;
 });
