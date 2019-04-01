@@ -6,7 +6,3 @@ p {
 .is-hidden {
   display: none;
 }
-
-.is-shown {
-  display: block;
-}
