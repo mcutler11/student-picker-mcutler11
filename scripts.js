@@ -6,8 +6,6 @@ const students = [
   { fname: "Camille", lname: "Schneider" }
 ];
 
-const p = document.querySelector("p");
-
 const studentCreator = (fname, lname) => {
   const student = {
     fname,
