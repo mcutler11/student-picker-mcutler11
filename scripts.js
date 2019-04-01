@@ -6,6 +6,8 @@ const students = [
   { fname: "Camille", lname: "Schneider" }
 ];
 
+const p = document.querySelector("p");
+
 const studentCreator = (fname, lname) => {
   const student = {
     fname,
@@ -33,6 +35,8 @@ document.querySelector("button").addEventListener("click", () => {
   // const ptc = p.textContent;
 
   // Here, it has to be used as a SETTER
-  document.querySelector("p").textContent = `Our lucky student is:
+  p.textContent = `Our lucky student is:
   ${chosen.fname} + ${chosen.lname}`;
+
+  p.classList.remove("is-hidden");
 });
