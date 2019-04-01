@@ -6,6 +6,8 @@ const students = [
   { fname: "Camille", lname: "Schneider" }
 ];
 
+const p = document.querySelector("p");
+
 const studentCreator = (fname, lname) => {
   const student = {
     fname,
@@ -29,6 +31,10 @@ document.querySelector("form").addEventListener("submit", e => {
 
 document.querySelector("button").addEventListener("click", () => {
   const chosen = students[getRandomIntInclusive(0, students.length - 1)];
-  const ptc = document.querySelector("p").textContent;
-  console.info(`${ptc} ${chosen.fname} + ${chosen.lname}`);
+  // We use the 'textContent' property as GETTER
+  // const ptc = p.textContent;
+
+  // Here, it has to be used as a SETTER
+  document.querySelector("p").textContent = `And the lucky student is:
+  ${chosen.fname} + ${chosen.lname}`;
 });
