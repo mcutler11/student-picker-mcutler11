@@ -31,12 +31,9 @@ document.querySelector("form").addEventListener("submit", e => {
 
 document.querySelector("button").addEventListener("click", () => {
   const chosen = students[getRandomIntInclusive(0, students.length - 1)];
-  // We use the 'textContent' property as GETTER
-  // const ptc = p.textContent;
-
-  // Here, it has to be used as a SETTER
   p.textContent = `Our lucky student is:
   ${chosen.fname} + ${chosen.lname}`;
 
   p.classList.remove("is-hidden");
+  p.classList.add("slideInDown");
 });
