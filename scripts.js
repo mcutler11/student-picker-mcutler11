@@ -1,4 +1,38 @@
-const inAnimations = ["bounceIn", "bounceInDown", "bounceInLeft", "bounceInRight", "bounceInUp", "fadeIn", "fadeInDown", "fadeInDownBig", "fadeInLeft", "fadeInLeftBig", "fadeInRight", "fadeInRightBig", "fadeInUp", "fadeInUpBig", "flipInX", "flipInY", "lightSpeedIn", "rotateIn", "rotateInDownLeft", "rotateInDownRight", "rotateInUpLeft", "rotateInUpRight", "slideInUp", "slideInDown", "slideInLeft", "slideInRight", "zoomIn", "zoomInDown", "zoomInLeft", "zoomInRight", "zoomInUp", "jackInTheBox", "rollIn"];
+const inAnimations = [
+  "bounceIn",
+  "bounceInDown",
+  "bounceInLeft",
+  "bounceInRight",
+  "bounceInUp",
+  "fadeIn",
+  "fadeInDown",
+  "fadeInDownBig",
+  "fadeInLeft",
+  "fadeInLeftBig",
+  "fadeInRight",
+  "fadeInRightBig",
+  "fadeInUp",
+  "fadeInUpBig",
+  "flipInX",
+  "flipInY",
+  "lightSpeedIn",
+  "rotateIn",
+  "rotateInDownLeft",
+  "rotateInDownRight",
+  "rotateInUpLeft",
+  "rotateInUpRight",
+  "slideInUp",
+  "slideInDown",
+  "slideInLeft",
+  "slideInRight",
+  "zoomIn",
+  "zoomInDown",
+  "zoomInLeft",
+  "zoomInRight",
+  "zoomInUp",
+  "jackInTheBox",
+  "rollIn"
+];
 
 const students = [
   { fname: "Michael", lname: "Cutler" },
@@ -37,5 +71,6 @@ document.querySelector("button").addEventListener("click", () => {
   ${chosen.fname} ${chosen.lname}`;
 
   p.classList.remove("is-hidden");
-  p.classList.add("slideInDown");
+
+  p.classList.add(inAnimations[getRandomIntInclusive(0, students.length - 1)]);
 });
