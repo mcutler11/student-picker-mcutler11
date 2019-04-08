@@ -72,5 +72,8 @@ document.querySelector("button").addEventListener("click", () => {
 
   p.classList.remove("is-hidden");
 
+  // const chosenAnimation = inAnimations[getRandomIntInclusive(0, inAnimations.length - 1)];
+  // p.classList.add(chosenAnimation);
+
   p.classList.add(inAnimations[getRandomIntInclusive(0, students.length - 1)]);
 });
