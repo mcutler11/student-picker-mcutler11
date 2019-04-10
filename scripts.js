@@ -58,6 +58,9 @@ const studentCreator = (fname, lname) => {
 const getRandomIntInclusive = (min, max) =>
   Math.floor(Math.random() * (max - min + 1)) + min;
 
+const classUpdater = (listOfClasses, remove) =>
+  Array.from(listOfClasses).filter(cl => !cl.includes(remove));
+
 document.querySelector("form").addEventListener("submit", e => {
   e.preventDefault();
 
@@ -69,7 +72,9 @@ document.querySelector("form").addEventListener("submit", e => {
 
 document.querySelector("button").addEventListener("click", () => {
   const chosen = students[getRandomIntInclusive(0, students.length - 1)];
+
   p.classList.remove(currentAnimation);
+
   currentAnimation =
     inAnimations[getRandomIntInclusive(0, students.length - 1)];
 
@@ -78,4 +83,6 @@ document.querySelector("button").addEventListener("click", () => {
   p.classList.remove("is-hidden");
 
   p.classList.add(currentAnimation);
+
+  const testResults = classUpdater(p.classList, "In");
 });
