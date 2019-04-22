@@ -46,14 +46,20 @@ const students = [
 
 const p = document.querySelector("p");
 
-const studentCreator = (fname, lname) => {
-  const student = {
-    fname,
-    lname
-  };
+function Student(fname, lname) {
+  this.fname = fname;
+  this.lname = lname;
+  this.pts = 0;
+}
 
-  return student;
-};
+// const studentCreator = (fname, lname) => {
+//   const student = {
+//     fname,
+//     lname
+//   };
+
+//   return student;
+// };
 
 const getRandomIntInclusive = (min, max) =>
   Math.floor(Math.random() * (max - min + 1)) + min;
@@ -67,7 +73,8 @@ document.querySelector("form").addEventListener("submit", e => {
   const fname = document.querySelector("#fname").value;
   const lname = document.querySelector("#lname").value;
 
-  students.push(studentCreator(fname, lname));
+  students.push(new Student(fname, lname));
+  console.info(students);
 });
 
 document.querySelector("button").addEventListener("click", () => {
