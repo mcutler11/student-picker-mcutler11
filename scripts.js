@@ -99,4 +99,9 @@ document.querySelector("button").addEventListener("click", () => {
 btns.forEach(btn =>
   btn.addEventListener("click", function(){
     console.log(this);
+    // Grab the 'textContent' that will be String.
+    // In that String, just grab the 'last' character - that will be '1', '2', '3'
+    // Convert to a number
+    // Pass that number to method attached to the Student Prototype that updates THAT student's
+    // 'pts value.
   }))
