@@ -1,5 +1,7 @@
 let currentAnimation;
 
+const btns = document.querySelectorAll("button");
+
 const inAnimations = [
   "bounceIn",
   "bounceInDown",
@@ -36,13 +38,15 @@ const inAnimations = [
   "rollIn"
 ];
 
-const students = [
-  { fname: "Michael", lname: "Cutler" },
-  { fname: "Bernard", lname: "Matthews" },
-  { fname: "Amelie", lname: "Bouchard" },
-  { fname: "Edward", lname: "Russo" },
-  { fname: "Camille", lname: "Schneider" }
-];
+// const students = [
+//   { fname: "Michael", lname: "Cutler" },
+//   { fname: "Bernard", lname: "Matthews" },
+//   { fname: "Amelie", lname: "Bouchard" },
+//   { fname: "Edward", lname: "Russo" },
+//   { fname: "Camille", lname: "Schneider" }
+// ];
+
+const students = [];
 
 const p = document.querySelector("p");
 
@@ -90,6 +94,9 @@ document.querySelector("button").addEventListener("click", () => {
   p.classList.remove("is-hidden");
 
   p.classList.add(currentAnimation);
-
-  const testResults = classUpdater(p.classList, "In");
 });
+
+btns.forEach(btn =>
+  btn.addEventListener("click", function(){
+    console.log(this);
+  }))
