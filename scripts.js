@@ -1,5 +1,3 @@
-let currentAnimation;
-
 const btns = document.querySelectorAll("button");
 
 const inAnimations = [
@@ -48,6 +46,9 @@ const inAnimations = [
 
 const students = [];
 
+let randomAnimation;
+let chosen;
+
 const p = document.querySelector("p");
 
 function Student(fname, lname) {
@@ -56,20 +57,8 @@ function Student(fname, lname) {
   this.pts = 0;
 }
 
-// const studentCreator = (fname, lname) => {
-//   const student = {
-//     fname,
-//     lname
-//   };
-
-//   return student;
-// };
-
 const getRandomIntInclusive = (min, max) =>
   Math.floor(Math.random() * (max - min + 1)) + min;
-
-const classUpdater = (listOfClasses, remove) =>
-  Array.from(listOfClasses).filter(cl => !cl.includes(remove));
 
 document.querySelector("form").addEventListener("submit", e => {
   e.preventDefault();
@@ -82,26 +71,23 @@ document.querySelector("form").addEventListener("submit", e => {
 });
 
 document.querySelector("button").addEventListener("click", () => {
-  const chosen = students[getRandomIntInclusive(0, students.length - 1)];
+  chosen = students[getRandomIntInclusive(0, students.length - 1)];
 
-  p.classList.remove(currentAnimation);
+  p.classList.remove(
+    ...Array.from(p.classList).filter(c => inAnimations.includes(c))
+  );
 
-  currentAnimation =
-    inAnimations[getRandomIntInclusive(0, students.length - 1)];
+  randomAnimation = inAnimations[getRandomIntInclusive(0, students.length - 1)];
 
   p.textContent = `Our lucky student is: ${chosen.fname} ${chosen.lname}`;
 
   p.classList.remove("is-hidden");
 
-  p.classList.add(currentAnimation);
+  p.classList.add(randomAnimation);
 });
 
 btns.forEach(btn =>
-  btn.addEventListener("click", function clickHandler(event){
-    console.log(event.target);
-    // Grab the 'textContent' that will be String.
-    // In that String, just grab the 'last' character - that will be '1', '2', '3'
-    // Convert to a number
-    // Pass that number to method attached to the Student Prototype that updates THAT student's
-    // 'pts value.
-  }))
+  btn.addEventListener("click", event => {
+    const points = Number(event.target.textContent);
+  })
+);
