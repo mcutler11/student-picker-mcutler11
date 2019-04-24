@@ -1,4 +1,4 @@
-const btns = document.querySelectorAll("button");
+const btns = document.querySelectorAll("button:not(#pick-student)");
 
 const inAnimations = [
   "bounceIn",
@@ -57,7 +57,8 @@ function Student(fname, lname) {
   this.lname = lname;
   this.pts = 0;
   this.updatePts = function(points) {
-    console.log(points);
+    this.pts += points;
+    console.log(chosen);
   };
 }
 
