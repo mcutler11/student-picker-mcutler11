@@ -97,8 +97,8 @@ document.querySelector("button").addEventListener("click", () => {
 });
 
 btns.forEach(btn =>
-  btn.addEventListener("click", function(){
-    console.log(this);
+  btn.addEventListener("click", function clickHandler(event){
+    console.log(event.target);
     // Grab the 'textContent' that will be String.
     // In that String, just grab the 'last' character - that will be '1', '2', '3'
     // Convert to a number
