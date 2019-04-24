@@ -52,9 +52,13 @@ let chosen;
 const p = document.querySelector("p");
 
 function Student(fname, lname) {
+  // These properties are assigned to a NEW instance of any student - when we use the 'new' keyword
   this.fname = fname;
   this.lname = lname;
   this.pts = 0;
+  this.updatePts = function(points) {
+    console.log(points);
+  };
 }
 
 const getRandomIntInclusive = (min, max) =>
@@ -67,10 +71,9 @@ document.querySelector("form").addEventListener("submit", e => {
   const lname = document.querySelector("#lname").value;
 
   students.push(new Student(fname, lname));
-  console.info(students);
 });
 
-document.querySelector("button").addEventListener("click", () => {
+document.querySelector("#pick-student").addEventListener("click", () => {
   chosen = students[getRandomIntInclusive(0, students.length - 1)];
 
   p.classList.remove(
@@ -89,5 +92,6 @@ document.querySelector("button").addEventListener("click", () => {
 btns.forEach(btn =>
   btn.addEventListener("click", event => {
     const points = Number(event.target.textContent);
+    chosen.updatePts(points);
   })
 );
