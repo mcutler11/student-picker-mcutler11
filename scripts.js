@@ -70,6 +70,24 @@ document.querySelector("form").addEventListener("submit", e => {
   const lname = document.querySelector("#lname").value;
 
   students.push(new Student(fname, lname));
+
+  function getCountStudents(n) {
+    if (n > 3 && n < 21) return "th";
+    switch (n % 10) {
+      case 1:
+        return "st";
+      case 2:
+        return "nd";
+      case 3:
+        return "rd";
+      default:
+        return "th";
+    }
+  }
+
+  p.textContent = `Added ${getCountStudents(
+    students.length
+  )} student: ${fname} ${fname}`;
 });
 
 document.querySelector("#pick-student").addEventListener("click", () => {
@@ -91,5 +109,22 @@ ECbtns.forEach(btn =>
   btn.addEventListener("click", event => {
     const points = Number(event.target.textContent);
     chosen.updatePts(points);
-  })
-);
+
+    function getCountECPoints(n) {
+      if (n > 3 && n < 21) return "th";
+    switch (n % 10) {
+      case 1:
+        return "st";
+      case 2:
+        return "nd";
+      case 3:
+        return "rd";
+      default:
+        return "th";
+    }
+  }
+
+  console.log("Added the " & getCountECPoints(points) & "extra credit point!");
+
+  )
+});
