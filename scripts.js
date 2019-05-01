@@ -85,7 +85,7 @@ document.querySelector("form").addEventListener("submit", e => {
     }
   }
 
-  p.textContent = `Added ${getCountStudents(
+  p.textContent = `Added the  ${students.length}${getCountStudents(
     students.length
   )} student: ${fname} ${fname}`;
 });
@@ -124,7 +124,7 @@ ECbtns.forEach(btn =>
     }
   }
 
-  console.log("Added the " & getCountECPoints(points) & "extra credit point!");
+  console.log("Added the " & points & getCountECPoints(points) & "extra credit point!");
 
   )
 });
