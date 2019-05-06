@@ -1,6 +1,8 @@
 // Grab all buttons that are not marked as #pick-student.
 const ECbtns = document.querySelectorAll("button:not(#pick-student)");
 
+// Grab all the buttons that are NOT marked as #pick-student.
+// These go into an Array-like Object known as NodeList.
 const inAnimations = [
   "bounceIn",
   "bounceInDown",
@@ -50,7 +52,10 @@ function Student(fname, lname) {
   // These properties are assigned to a NEW instance of any student - when we use the 'new' keyword
   this.fname = fname;
   this.lname = lname;
-  this.pts = 0;
+
+  // Use the || LOGICAL OPERATOR to assign the value of the NAMED PARAMETER 'pts'.
+  // If that is 'undefined', then '0' gets assigned.
+  this.pts = pts || 0;
 
   // NEXT:  Move this METHOD (fxn. that belongs to a specific Constructor) into a PROTOTYPE.
   // There is no need for each and every student to keep a duplicate of this method.
@@ -117,21 +122,7 @@ ECbtns.forEach(btn =>
     const points = Number(event.target.textContent);
     chosen.updatePts(points);
 
-    function getCountECPoints(n) {
-      if (n > 3 && n < 21) return "th";
-    switch (n % 10) {
-      case 1:
-        return "st";
-      case 2:
-        return "nd";
-      case 3:
-        return "rd";
-      default:
-        return "th";
-    }
-  }
-
-  console.log("Added the " & points & getCountECPoints(points) & "extra credit point!");
+  console.log("Added the " & getCountStr(points) & "extra credit point!");
 
   )
 });
