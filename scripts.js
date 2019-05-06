@@ -50,11 +50,12 @@ const p = document.querySelector("p");
 // Function Constructor using the 'new' keyword.
 function Student(fname, lname, pts) {
   // These properties are assigned to a NEW instance of any student - when we use the 'new' keyword
-  this.fname = fname || "No First Name";
-  this.lname = lname || "No Last Name";
+  this.fname = fname;
+  this.lname = lname;
 
   // Use the || LOGICAL OPERATOR to assign the value of the NAMED PARAMETER 'pts'.
   // If that is 'undefined', then '0' gets assigned.
+  // This is known as SHORT CIRCUITING.
   this.pts = pts || 0;
 
   // NEXT:  Move this METHOD (fxn. that belongs to a specific Constructor) into a PROTOTYPE.
