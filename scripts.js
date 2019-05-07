@@ -123,7 +123,7 @@ ECbtns.forEach(btn =>
     const points = Number(event.target.textContent);
     chosen.updatePts(points);
 
-  console.log("Added the " & getCountStr(points) & "extra credit point!");
+  console.log("Added the " & getCountStr(points) & " extra credit point!");
 
-  )
-});
+  })
+);
