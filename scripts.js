@@ -60,10 +60,10 @@ function Student(fname, lname, pts) {
 
   // NEXT:  Move this METHOD (fxn. that belongs to a specific Constructor) into a PROTOTYPE.
   // There is no need for each and every student to keep a duplicate of this method.
-  this.updatePts = function(points) {
-    this.pts += points;
-    console.log(chosen);
-  };
+}
+
+function updatePts(p) {
+  Student.pts += p
 }
 
 function getCountStr(n) {
@@ -123,7 +123,7 @@ ECbtns.forEach(btn =>
     const points = Number(event.target.textContent);
     chosen.updatePts(points);
 
-  console.log("Added the " & getCountStr(points) & " extra credit point!");
+  p.TextContent = `Added the  ${getCountStr(points)} extra credit point!`;
 
   })
 );
