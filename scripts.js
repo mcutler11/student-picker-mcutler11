@@ -48,10 +48,11 @@ let chosen;
 const p = document.querySelector("p");
 
 // Function Constructor using the 'new' keyword.
-function Student(fname, lname, pts) {
+function Student(fname, lname, age, pts) {
   // These properties are assigned to a NEW instance of any student - when we use the 'new' keyword
   this.fname = fname;
   this.lname = lname;
+  this.age = age;
 
   // Use the || LOGICAL OPERATOR to assign the value of the NAMED PARAMETER 'pts'.
   // If that is 'undefined', then '0' gets assigned.
@@ -60,10 +61,6 @@ function Student(fname, lname, pts) {
 
   // NEXT:  Move this METHOD (fxn. that belongs to a specific Constructor) into a PROTOTYPE.
   // There is no need for each and every student to keep a duplicate of this method.
-}
-
-function updatePts(p) {
-  Student.pts += p
 }
 
 function getCountStr(n) {
@@ -82,6 +79,22 @@ function getCountStr(n) {
       return `${n}th`;
   }
 }
+
+function updatePts(points) {
+  Student.prototype.pts += points;
+}
+
+Student.prototype.displayInfo = function() {
+  return `${this.fname} ${this.lname}:  Aged ${this.age}.`;
+};
+
+const secretStudent = new Student("Cassie", "Desmond", 25, 0);
+
+students.push(secretStudent);
+
+secretStudent.displayInfo = function() {
+  return `Pfft, I'm not giving you any info!`;
+};
 
 const getRandomIntInclusive = (min, max) =>
   Math.floor(Math.random() * (max - min + 1)) + min;
@@ -120,10 +133,9 @@ document.querySelector("#pick-student").addEventListener("click", () => {
 
 ECbtns.forEach(btn =>
   btn.addEventListener("click", event => {
-    const points = Number(event.target.textContent);
-    chosen.updatePts(points);
+    const ec = Number(event.target.textContent);
+    chosen.updatePts(ec);
 
-  p.TextContent = `Added the  ${getCountStr(points)} extra credit point!`;
-
+    p.TextContent = `Added the  ${getCountStr(ec)} extra credit point!`;
   })
 );
