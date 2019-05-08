@@ -80,9 +80,9 @@ function getCountStr(n) {
   }
 }
 
-function updatePts(points) {
-  Student.prototype.pts += points;
-}
+Student.prototype.updatePts = function(points) {
+  this.pts += points;
+};
 
 Student.prototype.displayInfo = function() {
   return `${this.fname} ${this.lname}:  Aged ${this.age}.`;
@@ -113,7 +113,7 @@ document.querySelector("form").addEventListener("submit", e => {
 
   p.textContent = `Added the  ${getCountStr(
     students.length
-  )} student: ${fname} ${fname}`;
+  )} student: ${fname} ${lname}`;
 });
 
 document.querySelector("#pick-student").addEventListener("click", () => {
