@@ -54,6 +54,10 @@ function Student(fname, lname, age, pts) {
   this.lname = lname;
   this.age = age;
 
+  document.body.appendChild(
+    (document.createElement("p").textContent = "Create a Student")
+  );
+
   // Use the || LOGICAL OPERATOR to assign the value of the NAMED PARAMETER 'pts'.
   // If that is 'undefined', then '0' gets assigned.
   // This is known as SHORT CIRCUITING.
